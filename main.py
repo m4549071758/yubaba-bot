@@ -26,7 +26,7 @@ async def on_message(message):
         await asyncio.sleep(1)
         await message.channel.send(f"フン。`{old_name}`というのかい。贅沢な名だね。")
 
-        name_length = random.randint(1,15) #名前の長さをrandintで決定 1~15文字
+        name_length = random.randint(1,len(old_name))
         new_name_listed = random.choices(name.replace(" ",""), k=name_length) #空白は潰し、randomでchoice
         new_name = "".join(new_name_listed) #リストから文字列へ
 
